@@ -1,0 +1,21 @@
+[
+  { 
+    "name": "Jimmy Barns",
+    "email": "jimmy@barns.com",
+    "phone": "220-446-1253",
+    "birthdate": "09/01/2019",
+    "related" : "Shawn",
+     "relId" : "2",
+    "id": 1
+  },
+
+  { 
+    "name": "Shawn Spencer",
+    "email": "shawn@spencer.com",
+    "phone": "820-198-2327",
+    "birthdate": "05/03/2003",
+     "related" : "Ella",
+     "relId" : "3",
+    "id": 2
+  }
+]
