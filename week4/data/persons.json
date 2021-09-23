@@ -1,30 +1,23 @@
 [
   { 
-    "name": "Jimmy Barns",
-    "email": "jimmy@barns.com",
-    "phone": "220-446-1253",
-    "birthdate": "09/01/2019",
-    "related" : "Shawn",
-     "relId" : "2",
+    "name": "Jane Coder",
+    "email": "jane@coder.com",
+    "phone": "800-456-1234",
+    "birthdate": "04/01/2020",
     "id": 1
   },
-
   { 
-    "name": "Shawn Spencer",
-    "email": "shawn@spencer.com",
-    "phone": "820-198-2327",
-    "birthdate": "05/03/2003",
-     "related" : "Ella",
-     "relId" : "3",
+    "name": "Data Person",
+    "email": "data@person.com",
+    "phone": "800-123-4567",
+    "birthdate": "01/02/2001",
     "id": 2
   },
   { 
-    "name": "Ella Hill",
-    "email": "Ella@spencer.com",
-    "phone": "820-186-2327",
-    "birthdate": "05/03/2003",
-     "related" : "Jimmy",
-      "relId" : "1",
+    "name": "George Scripter",
+    "email": "george@scripter.com",
+    "phone": "800-876-3090",
+    "birthdate": "12/01/2010",
     "id": 3
   }
 ]
