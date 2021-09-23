@@ -1,23 +1,23 @@
 [
   { 
-    "name": "Jane Coder",
+    "name": "Ella Hill",
     "email": "jane@coder.com",
-    "phone": "800-456-1234",
-    "birthdate": "04/01/2020",
+    "phone": "834-676-1984",
+    "birthdate": "03/01/2010",
     "id": 1
   },
   { 
-    "name": "Data Person",
+    "name": "Jimmy Barns",
     "email": "data@person.com",
-    "phone": "800-123-4567",
-    "birthdate": "01/02/2001",
+    "phone": "230-563-4347",
+    "birthdate": "07/07/2000",
     "id": 2
   },
   { 
-    "name": "George Scripter",
+    "name": "Shawn Spencer",
     "email": "george@scripter.com",
-    "phone": "800-876-3090",
-    "birthdate": "12/01/2010",
+    "phone": "810-237-3060",
+    "birthdate": "13/10/1990",
     "id": 3
   }
 ]

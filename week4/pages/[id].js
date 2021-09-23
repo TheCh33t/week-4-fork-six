@@ -5,7 +5,7 @@ import { getAllIds, getData } from '../lib/data';
 
 export async function getStaticProps({ params }) {
   const itemData = await getData(params.id);
-  // console.log(itemData);
+  
   return {
     props: {
       itemData
@@ -24,7 +24,7 @@ export async function getStaticPaths() {
 export default function Entry({ itemData }) {
   return (
     <Layout>
-      {/* render details about one entity in persons.json saved in itemData */}
+      {}
       <article className="card col-6">
         <h2>Person Detail</h2>
         <div className="card-body">
@@ -34,9 +34,9 @@ export default function Entry({ itemData }) {
           <a href={'mailto:' + itemData.email} className="card-link">{itemData.email}</a>
         </div>
       </article>
-      {/* render details about all other entities in persons.json related to id */}
+      {}
       <div className="list-group col-6">
-        {/* check for existence of itemData.related property */}
+        {}
         {itemData.related ? 
           <h2>Related Persons</h2> : null
         }
@@ -50,7 +50,7 @@ export default function Entry({ itemData }) {
           )
           : null
         }
-        {/* using expression ? ... : null */}
+        {}
       </div>
     </Layout>
   );
