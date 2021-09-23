@@ -8,10 +8,5 @@
     "owner_id": 3,
     "related_ids": [2],
     "id": 2
-  },
-  {
-    "owner_id": 1,
-    "related_ids": [1, 2],
-    "id": 3
   }
 ]
