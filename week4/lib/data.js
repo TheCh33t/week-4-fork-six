@@ -5,86 +5,58 @@ import path from 'path';
 const dataDir = path.join(process.cwd(), 'data');
 
 // function returns ids for all json objects in array
+// called from [id].js getStaticPaths() function
 export function getAllIds() {
   // get filepath to json file
   const filePath = path.join(dataDir, 'persons.json');
-  const filePath2 = path.join(dataDir, 'persons2.json');
-  
   // load json file contents
   const jsonString = fs.readFileSync(filePath, 'utf8');
-  const jsonString2 = fs.readFileSync(filePath2, 'utf8');
   // convert string from file into json array object
   const jsonObj = JSON.parse(jsonString);
-  const jsonObj2 = JSON.parse(jsonString2);
   // use map() on array to extract just id properties into new array of obj values
-const jsonObj3 = jsonObj.concat(jsonObj2);
-
-  
-  return jsonObj3.map(item => {
+  return jsonObj.map(item => {
     return {
       params: {
         id: item.id.toString()
       }
     }
   });
-  
+  // above code returns an array with nested obj values that looks like this:
+  // [
+  //   {
+  //     params: {
+  //       id: 3
+  //     }
+  //   },
+  //   {
+  //     params: {
+  //       id: 2
+  //     }
+  //   }
+  // ]
 }
 
-
+// function returns names and ids for all json objects in array, sorted by name property
+// called from pages/index.js
 export function getSortedList() {
-  
-const filePath = path.join(dataDir, 'persons.json');
-  const filePath2 = path.join(dataDir, 'persons2.json');
-  
+  // get filepath to json file
+  const filePath = path.join(dataDir, 'persons.json');
   // load json file contents
   const jsonString = fs.readFileSync(filePath, 'utf8');
-  const jsonString2 = fs.readFileSync(filePath2, 'utf8');
   // convert string from file into json array object
   const jsonObj = JSON.parse(jsonString);
-  const jsonObj2 = JSON.parse(jsonString2);
-  // use map() on array to extract just id properties into new array of obj values
-const jsonObj3 = jsonObj.concat(jsonObj2);
-
-  jsonObj3.sort(function (a, b) {
+  // sort json array by name property
+  jsonObj.sort(function (a, b) {
       return a.name.localeCompare(b.name);
   });
 
-  
-  return jsonObj3.map(item => {
+  // use map() on array to extract just id + name properties into new array of obj values
+  return jsonObj.map(item => {
     return {
       id: item.id.toString(),
       name: item.name
     }
   });
-}
-
-export async function getData(idRequested) {
-  
-  const filePath = path.join(dataDir, 'persons.json');
-  const filePath2 = path.join(dataDir, 'persons2.json');
-  
-  // load json file contents
-  const jsonString = fs.readFileSync(filePath, 'utf8');
-  const jsonString2 = fs.readFileSync(filePath2, 'utf8');
-  // convert string from file into json array object
-  const jsonObj = JSON.parse(jsonString);
-  const jsonObj2 = JSON.parse(jsonString2);
-  // use map() on array to extract just id properties into new array of obj values
-const jsonObj3 = jsonObj.concat(jsonObj2);
-  
-  const objMatch = jsonObj3.filter(obj => {
-    return obj.id.toString() === idRequested;
-  });
-
-  
-  let objReturned;
-  if (objMatch.length > 0) {
-    objReturned = objMatch[0];
-  } else {
-    objReturned = {};
-  }
-  
-  return objReturned;
 }
 
 // called from [id].js getStaticProps() function
