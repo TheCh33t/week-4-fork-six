@@ -4,13 +4,15 @@ import Layout from '../components/layout';
 import { getAllIds, getData } from '../lib/data';
 
 export async function getStaticProps({ params }) {
+  
   const itemData = await getData(params.id);
   
   return {
     props: {
-      itemData
     }
   };
+
+
 }
 
 export async function getStaticPaths() {
@@ -21,26 +23,43 @@ export async function getStaticPaths() {
   };
 }
 
+
 export default function Entry({ itemData }) {
-  return (
-    <Layout>
-      {}
+return ( 
+    
+
+    <Layout page>
+      {
+     
+
+  
+      }
+      
+       
+      <h1>Data:</h1>
       <article className="card col-6">
-        <h2>Person Detail</h2>
+       {itemData ?
         <div className="card-body">
+        
+
+      
           <h5 className="card-title">{itemData.name}</h5>
           <h6 className="card-subtitle mb-2 text-muted">{itemData.phone}</h6>
           <p className="card-text">{itemData.birthdate}</p>
           <a href={'mailto:' + itemData.email} className="card-link">{itemData.email}</a>
+          
+          
+          
         </div>
+        : null}
       </article>
       {}
       <div className="list-group col-6">
         {}
-        {itemData.related ? 
+        {itemData ? 
           <h2>Related Persons</h2> : null
         }
-        {itemData.related ? 
+        {itemData ? 
           itemData.related.map(
             ({ id, name }) => (
               <Link key={id} href={`/${id}`}>
@@ -53,5 +72,8 @@ export default function Entry({ itemData }) {
         {}
       </div>
     </Layout>
-  );
+
+   );
+
+
 }
